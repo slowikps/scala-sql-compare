@@ -39,6 +39,15 @@ lazy val doobie = (project in file("doobie"))
   )
   .dependsOn(common)
 
+lazy val doobie5 = (project in file("doobie5"))
+  .settings(commonSettings)
+  .settings(
+    libraryDependencies ++= Seq(
+      "org.tpolecat" %% "doobie-postgres"  % "0.5.0-M13"
+    )
+  )
+  .dependsOn(common)
+
 lazy val quill = (project in file("quill"))
   .settings(commonSettings)
   .settings(
